@@ -53,7 +53,7 @@
                                                         "</p><p class=\"text-warning\">Could be due to "+
                                                         "incomplete implementation of usfm-grammar or vachan-api too"
                               }
-                              else if (format == "json") {
+                              else if (format == "usj") {
                                 var pretty = JSON.stringify(data, null, 4)
                                 outputForDownload = pretty
                                 outElement.innerHTML = "<div class=\"text-break w-100\">"+
@@ -132,7 +132,7 @@
           encodeURIComponent(outputForDownload));
 
         if (format == "usx") { filename = "USX.xml"}
-        else if (format == "json") { filename = "USFM.json"}
+        else if (format == "usj") { filename = "USFM.json"}
         else if (format == "table") { filename = "USFM.tsv"}
         else if (format == "syntax-tree") { filename = "USFM-syntax-tree.txt"}
         pom.setAttribute('download', filename);
@@ -205,7 +205,7 @@
 \b
 \q1
 \v 2 O \nd Lord\nd*, I have heard of what you have done,
-\q2 and I am filled with awe.
+\q2 and I am filled with awe.json
 \q1 Now do again in our times
 \q2 the great deeds you used to do.
 \q1 Be merciful, even when you are angry.
