@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+    <header class="bg-blue-500 py-4 mb-8">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-white text-2xl font-bold">Simple Blog</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#" class="text-white hover:underline">Home</a></li>
+                    <li><a href="#" class="text-white hover:underline">About</a></li>
+                    <li><a href="#" class="text-white hover:underline">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white shadow-md rounded-lg p-6">
+                <h2 class="text-xl font-semibold mb-4">Post Title 1</h2>
+                <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor
+                    tellus eget est tristique, nec egestas enim efficitur.</p>
+                <a href="#" class="text-blue-500 hover:underline mt-2 block">Read more</a>
+            </div>
+            <div class="bg-white shadow-md rounded-lg p-6">
+                <h2 class="text-xl font-semibold mb-4">Post Title 2</h2>
+                <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor
+                    tellus eget est tristique, nec egestas enim efficitur.</p>
+                <a href="#" class="text-blue-500 hover:underline mt-2 block">Read more</a>
+            </div>
+            <div class="bg-white shadow-md rounded-lg p-6">
+                <h2 class="text-xl font-semibold mb-4">Post Title 3</h2>
+                <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor
+                    tellus eget est tristique, nec egestas enim efficitur.</p>
+                <a href="#" class="text-blue-500 hover:underline mt-2 block">Read more</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-blue-500 py-4 mt-8">
+        <div class="container mx-auto text-center text-white">
+            &copy; 2024 Simple Blog. All rights reserved.
+        </div>
+    </footer>
+</body>
+
+</html>
