@@ -7,51 +7,7 @@
     <script type="text/javascript">
       const BASE_URL = "{{BASE_URL}}"
       var outputForDownload = "";
-      async function VElogin() {
-        var email = document.getElementById('userEmail').value
-        var password = document.getElementById('userPassword').value
-        var divElement = document.getElementById("login-form")
-        var url = BASE_URL+"/v2/user/login?"+"user_email="+email+"&password="+password
-
-        fetch(url)
-              .then(response => response.json())
-              .then(data => { 
-                              if("token" in data) {
-                                authToken = data['token']
-                                divElement.innerHTML = "<div class=\"d-flex flex-row-reverse mb-1 p-1 border\">"+
-                                  "<button class=\"btn btn-secondary\" onclick=\"VElogout();\">Logout</button>"+
-                                  "<p id=token class=\"text-success\">"+authToken+"</p>"+
-                                  "<p> Token:</p>"+
-                                  "</div>"
-                              }
-                              else if("error" in data) {
-                                alert(data['error']+": "+data['details'])
-                              }
-                            }
-                    );
-      }
-
-      async function VElogout() {
-        var token = document.getElementById('token').textContent;
-        var url = BASE_URL+"/v2/user/logout"
-        var header = {
-                      "Authorization": "Bearer "+token,
-                      'Content-type': 'application/json',}
-        fetch(url,{
-          method: 'GET',
-          headers:header,
-          })
-            .then(response => response.json())
-            .then( data => {
-                      if ("message" in data && data['message'] == "Successfully Logged out"){
-                         authToken = null;
-                         location.reload(); 
-                       }
-                      else
-                        alert(JSON.stringify(data))
-            });
-      }
-
+      
       function prettyPrint() {
           var jsonElement = document.getElementById('alignment-json')
           var outElement =  document.getElementById('output');
@@ -75,7 +31,7 @@
         var format = document.getElementById('format-select').value;
         var filter = document.getElementById('filter-select').value;
         var outElement = document.getElementById('output');
-        var url = BASE_URL+"/v2/files/usfm/to/"+format+"?"+
+        var url = "https://stagingapi.vachanengine.org/v2/cms/rest/files/"+format+"?"+
                 "content_filter="+filter
         var payload = {
           "USFM" : usfm
